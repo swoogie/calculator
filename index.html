@@ -7,68 +7,60 @@
     <title>Document</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
-
 <body>
-<form name="calcul">
-<table>
+    
+	<div class="container">
+		<div class="display">
+			<input id="screen" type="text" placeholder="0">
+		</div>
 
-	<tr>
-		<td colspan="4"> <input type="text" name="result" placeholder="0" style="text-align:right"> </td>
-	</tr>
+		<div class="btns">
+			<div class="row">
+				<button id="ce" onclick="backspc()">CE</button>
+				<button onclick="fact()">x!</button>
+				<button class="btn">(</button>
+				<button class="btn">)</button>
+				<button class="btn">%</button>
+				<button id="ac" onclick="screen.value=''">AC</button>
+			</div>
 
-	<tr>
-		<td><button type="button" value="sin" onclick="sin()"> sin </button> </td>
-		<td><button type="button" value="cos" onclick="cos()"> cos</button> </td>
-		<td><button type="button" value="tan" onclick="tan()"> tan </button> </td>
-		<td colspan="2">
-		 <button type="button" value="C" class="clear" onclick="remv()"> C </button>
-	 </td>
-	</tr>
+			<div class="row">
+				<button onclick="sin()">sin</button>
+				<button onclick="pi()">π</button>
+				<button class="btn">7</button>
+				<button class="btn">8</button>
+				<button class="btn">9</button>
+				<button class="btn">÷</button>
+			</div>
 
-	<tr>
-		<td><button type="button" value="x^2" onclick="square()"> x<sup>2 </button> </td>
-		<td><button type="button" value="x^3" onclick="cubed()"> x<sup>3 </button> </td>
-		<td><button type="button" value="sqrt2" onclick="sqrt2()"> &radic; </button> </td>
-		<td><button type="button" value="sqrt3" onclick="sqrt3()"> &#8731; </button> </td>
-	</tr>
+			<div class="row">
+				<button onclick="cos()">cos</button>
+				<button onclick="log()">log</button>
+				<button class="btn">4</button>
+				<button class="btn">5</button>
+				<button class="btn">6</button>
+				<button class="btn">×</button>
+			</div>
 
-	<tr>
-		<td><button type="button" value="1" onclick="number(value)"> 1 </button> </td>
-		<td><button type="button" value="2" onclick="number(value)"> 2 </button> </td>
-		<td><button type="button" value="3" onclick="number(value)"> 3 </button> </td>
-		<td><button type="button" value="BACKSPC" onclick="BACKSPC()"> < </button> </td>
-	</tr>
+			<div class="row">
+				<button onclick="tan()">tan</button>
+				<button onclick="sqrt()">√</button>
+				<button class="btn">1</button>
+				<button class="btn">2</button>
+				<button class="btn">3</button>
+				<button class="btn">-</button>
+			</div>
 
-	<tr>
-		<td><button type="button" value="4" onclick="number(value)"> 4</button> </td>
-		<td><button type="button" value="5" onclick="number(value)"> 5 </button> </td>
-		<td><button type="button" value="6" onclick="number(value)"> 6 </button> </td>
-		<td><button type="button" value="-" onclick="number(value)"> - </button> </td>
-	</tr>
-
-	<tr>
-		<td><button type="button" value="7" onclick="number(value)"> 7 </button> </td>
-		<td><button type="button" value="8" onclick="number(value)"> 8 </button> </td>
-		<td><button type="button" value="9" onclick="number(value)"> 9 </button> </td>
-		<td><button type="button" value="/" onclick="number(value)"> / </button> </td>
-	</tr>
-
-	<tr>
-		<td><button type="button" value="." onclick="number(value)"> . </button> </td>
-		<td><button type="button" value="0" onclick="number(value)"> 0 </button> </td>
-		<td><button type="button" value="*" onclick="number(value)"> * </button> </td>
-		<td><button type="button" value="%" onclick="number(value)"> % </button> </td>
-	</tr>
-
-	<tr>
-		<td colspan="2"> <button type="button" value="=" onclick="equal()" class="equal">=</button> </td>
-		<td><button type="button" value="+" onclick="number(value)"> + </button> </td>
-	</tr>
-
-</table>
-</form>
-
+			<div class="row">
+				<button onclick="e()">e</button>
+				<button onclick="pow()">x<span style="position: relative; bottom: .4em; right: .1em;">y</span> </button>
+				<button class="btn">0</button>
+				<button class="btn">.</button>
+				<button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+				<button class="btn">+</button>
+			</div>
+		</div>
+	</div>
+</body>   
 <script src="app.js"></script>
-</body>
 </html>

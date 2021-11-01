@@ -1,44 +1,80 @@
-function sin(){
-	document.calcul.result.value=Math.sin(document.calcul.result.value);
-	}
+var screen=document.querySelector('#screen');
+    var btn=document.querySelectorAll('.btn');
 
-	function cos(){
-	document.calcul.result.value=Math.cos(document.calcul.result.value);
-	}
+    for(item of btn)
+    {
+        item.addEventListener('click',(e)=>{
+            btntext=e.target.innerText;
 
-	function tan(){
-	document.calcul.result.value=Math.tan(document.calcul.result.value);
-	}
+            if(btntext =='×')
+            {
+                btntext= '*';
+            }
 
-	function BACKSPC(){
-	var a = document.calcul.result.value;
-	document.calcul.result.value = a.substr(0, a.length-1);
-	}
+            if(btntext=='÷')
+            {
+                btntext='/';
+            }
+            screen.value+=btntext;
+        });
+    }
 
-	function square(){
-	document.calcul.result.value = Math.pow(document.calcul.result.value, 2);
-	}
+    function sin()
+    {
+        screen.value=Math.sin(screen.value);
+    }
 
-	function cubed(){
-	document.calcul.result.value = Math.pow(document.calcul.result.value, 3);
-	}
+    function cos()
+    {
+        screen.value=Math.cos(screen.value);
+    }
 
-	function sqrt2(){
-	document.calcul.result.value = Math.pow(document.calcul.result.value, 1/2);
-	}
+    function tan()
+    {
+        screen.value=Math.tan(screen.value);
+    }
 
-	function sqrt3(){
-	document.calcul.result.value = Math.pow(document.calcul.result.value, 1/3);
-	}
+    function pow()
+    {
+        screen.value=Math.pow(screen.value,2);
+    }
 
-	function number(value){
-	document.calcul.result.value += value;
-	}
+    function sqrt()
+    {
+        screen.value=Math.sqrt(screen.value,2);
+    }
 
-	function remv(){
-	document.calcul.result.value=" ";
-	}
+    function log()
+    {
+        screen.value=Math.log(screen.value);
+    }
 
-	function equal(){
-	document.calcul.result.value=eval(document.calcul.result.value);
-	}
+    function pi()
+    {
+        screen.value= 3.14159265359;
+    }
+
+    function e()
+    {
+        screen.value=2.71828182846;
+    }
+
+    function fact()
+    {
+        var i, num, f;
+        f=1
+        num=screen.value;
+        for(i=1; i<=num; i++)
+        {
+            f=f*i;
+        }
+
+        i=i-1;
+
+        screen.value=f;
+    }
+
+    function backspc()
+    {
+        screen.value=screen.value.substr(0,screen.value.length-1);
+    }
