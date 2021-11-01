@@ -1,5 +1,3 @@
-
-
 class Calculator{
     constructor(lastOpText, curOpText) {
         this.lastOpText = lastOpText;
