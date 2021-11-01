@@ -7,13 +7,38 @@
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    background: radial-gradient(#751669,#621675, #271675)no-repeat fixed;
-    padding: 50px 0px;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161616;
+}
+body:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(red,yellow);
+    clip-path: circle(22% at 30% 20%);
+    z-index: -1;
+}
+
+body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(green,yellow);
+    clip-path: circle(15% at 70% 80%);
+    z-index: -1;
 }
 button.clear {
-    background: #751669;
+    background: #fa4a1e;
     color: white;
 }
 button.clear:hover {
@@ -33,12 +58,12 @@ table {
 }
 button.equal {
     width: 95%;
-    background: #751669;
+    background: #70c520;
 }
 button.equal:hover{
 	background: #1f1f1f;
 }
-input[type=text]{
+/* input[type=text]{
     width: 450px;
     height: 81px;
     border: 1px solid #161616;
@@ -51,20 +76,32 @@ input[type=text]{
     color: white;
     border-bottom: 3px solid white;
     outline: none;
-}
+} */
+
+
+
 button {
-    padding: 10px 20px;
+    padding: 10px 10px;
     width: 100px;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 26px;
     font-weight: bold;
-    background: #1f1f1f;
+    background: #2c2c2c;
     border: none;
     color: white;
     border-radius: 10px;
     cursor: pointer;
 }
 button:hover{
-	background: #751669;
+	background: #1b1b1b;
+    box-shadow: 0px 0px 20px #000000;
+}
+
+.prevOp{
+    height: 50px;
+}
+
+.curOp{
+    height: 50px;
 }
