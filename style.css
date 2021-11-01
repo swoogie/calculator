@@ -68,22 +68,6 @@ button.equal {
                  inset -5px -5px 8px #fff;
     background: #fff;
 }
-/* input[type=text]{
-    width: 450px;
-    height: 81px;
-    border: 1px solid #161616;
-    padding: 10px 20px;
-    font-size: 29px;
-    background: #161616;
-    font-weight: bold;
-    margin-bottom: 25px;
-    margin-top: 10px;
-    color: white;
-    border-bottom: 3px solid white;
-    outline: none;
-} */
-
-
 
 button {
     padding: 10px 10px;
@@ -124,7 +108,7 @@ button:hover{
     box-shadow: 0px 0px 20px #000000;
 }
 
-.prevOp{
+.lastOp{
     height: 50px;
 }
 
