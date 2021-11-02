@@ -1,34 +1,37 @@
 class Calculator{
-    constructor(lastOpText, curOpText) {
+    constructor(lastOpText, curOpText){
         this.lastOpText = lastOpText;
         this.curOpText = curOpText;
         this.clear();
     }
 
     clear(){
-        this.curOp = '';
-        this.lastOp = '';
-        this.fun = null;
+        this.curOp = "";
+        this.lastOp = "";
+        this.fun = undefined;
     }
 
     delete(){
         this.curOp = this.lastOp.toString().slice(0, -1)
     }
 
-    appendNumber(num){
-        if (this.curOp.includes('.') && num === '.'){
+    makeFraction(num){
+        if (this.curOp.includes(".") && num === "."){
             return;
         }
-        this.curOp = this.curOp.toString() + num.toString;
+        this.curOp = this.curOp.toString() + num.toString();
     }
 
     selectFun(fun){
-        if(this.curOp === '') {
-            this.calculate()
+        if(this.curOp === ""){
+            return;
+        }
+        if(this.lastOp !== ""){
+            this.calculate();
         }
         this.fun = fun;
         this.lastOp = this.curOp;
-        this.curOp = '';
+        this.curOp = "";
     }
 
     calculate(){
@@ -54,7 +57,7 @@ class Calculator{
             case '^':
                 equal = Math.pow(last, cur);
                 break;
-            case 'x√':
+            case 'xrt':
                 equal = Math.pow(last, 1/cur);
                 break;
             default:
@@ -82,16 +85,16 @@ class Calculator{
             return;
         }
         switch(this.fun){
-            case 'sin':
+            case "sin":
                 equal = Math.sin(cur);
                 break;
-            case 'cos':
+            case "cos":
                 equal = Math.cos(cur);
                 break;
-            case 'tan':
+            case "tan":
                 equal = Math.tan(cur);
                 break;
-            case '√':
+            case "sqrt":
                 equal = Math.sqrt(cur);
                 break;
             default:
@@ -103,11 +106,11 @@ class Calculator{
 
     update(){
         this.curOpText.innerText = this.curOp;
-        if (this.fun != null){
+        if (this.fun != undefined){
             this.lastOpText.innerText = this.lastOp + this.fun;
         }
         else{
-            lastOpText = '';
+            lastOpText.innerText = "";
         }
     }
 }
@@ -118,14 +121,14 @@ const funSingle = document.querySelectorAll(".funSingle");
 const eqlButton = document.querySelector(".equal");
 const clrButton = document.querySelector(".clear");
 const delButton = document.querySelector(".delete");
-const lastOpText = doument.querySelector(".lastOp");
+const lastOpText = document.querySelector(".lastOp");
 const curOpText = document.querySelector(".curOp");
 
 const calculator = new Calculator(lastOpText, curOpText);
 
 numButton.forEach(button => {
     button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText);
+        calculator.makeFraction(button.innerText);
         calculator.update();
     })
 })
@@ -145,8 +148,8 @@ funSingle.forEach(button => {
 })
 
 eqlButton.addEventListener('click', button => {
-    calculator.compute();
-    calculator.updateDisplay();
+    calculator.calculate();
+    calculator.update();
 })
 
 clrButton.addEventListener('click', button => {

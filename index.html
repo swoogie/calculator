@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculator</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="app.js" defer></script>
 </head>
 <body>
-<form name="calculator">
+
 <table>
 	<tr>
 		<td colspan="4"><div class="lastOp"></div></td>
@@ -27,8 +28,9 @@
 
 	<tr>
 		<td><button class="funBtn">^</button></td>
-		<td><button class="funBtn">√</button></td>
-		<td colspan="2"> <button class="equal">=</button></td>
+		<td><button class="funSingle">sqrt</button></td>
+		<td><button class="funBtn">xrt</button></td>
+		<td> <button class="equal">=</button></td>
 	</tr>
 
 	<tr>
@@ -59,6 +61,5 @@
 		<td><button class="funBtn">/</button></td>
 	</tr>
 </table>
-</form>
-<script src="app.js"></script>
+
 </html>
