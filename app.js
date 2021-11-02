@@ -54,7 +54,7 @@ class Calculator{
             case '/':
                 equal = last / cur;
                 break;
-            case '^':
+            case 'pow':
                 equal = Math.pow(last, cur);
                 break;
             case 'xrt':

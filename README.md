@@ -1,2 +1,4 @@
 # calculator
-work in progress
+project finished
+
+documentation in progress
