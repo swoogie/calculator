@@ -12,7 +12,7 @@ class Calculator{
     }
 
     delete(){
-        this.curOp = this.lastOp.toString().slice(0, -1)
+        this.curOp = this.curOp.toString().slice(0, -1)
     }
 
     makeFraction(num){
